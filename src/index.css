@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ayurvedic Design System - Natural healing colors and gradients */
+
+@layer base {
+  :root {
+    /* Light theme - Natural Ayurvedic palette */
+    --background: 45 23% 97%;
+    --foreground: 150 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 15% 15%;
+
+    /* Sage green primary - healing and nature */
+    --primary: 145 25% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 145 35% 65%;
+
+    /* Warm earth secondary */
+    --secondary: 35 15% 92%;
+    --secondary-foreground: 145 25% 35%;
+
+    /* Subtle muted tones */
+    --muted: 45 10% 95%;
+    --muted-foreground: 150 8% 45%;
+
+    /* Golden accent for highlights */
+    --accent: 42 78% 85%;
+    --accent-foreground: 145 25% 25%;
+    --accent-gold: 45 85% 55%;
+
+    /* Healing success green */
+    --success: 145 60% 40%;
+    --success-foreground: 0 0% 98%;
+
+    /* Warning earth tone */
+    --warning: 25 85% 60%;
+    --warning-foreground: 0 0% 98%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 145 12% 88%;
+    --input: 145 12% 92%;
+    --ring: 145 25% 35%;
+
+    --radius: 0.75rem;
+
+    /* Gradients for Ayurvedic appeal */
+    --gradient-healing: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--accent-gold)), hsl(var(--accent)));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    
+    /* Shadows with natural depth */
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 150 15% 25%;
+    --sidebar-primary: 145 25% 35%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 145 15% 95%;
+    --sidebar-accent-foreground: 145 25% 35%;
+    --sidebar-border: 145 12% 88%;
+    --sidebar-ring: 145 25% 35%;
+  }
+
+  .dark {
+    /* Dark theme - Deep forest greens with warm accents */
+    --background: 150 15% 8%;
+    --foreground: 45 15% 92%;
+
+    --card: 150 12% 12%;
+    --card-foreground: 45 15% 92%;
+
+    --popover: 150 12% 12%;
+    --popover-foreground: 45 15% 92%;
+
+    --primary: 145 35% 65%;
+    --primary-foreground: 150 15% 8%;
+    --primary-glow: 145 45% 75%;
+
+    --secondary: 150 8% 18%;
+    --secondary-foreground: 45 15% 92%;
+
+    --muted: 150 8% 15%;
+    --muted-foreground: 150 5% 65%;
+
+    --accent: 42 65% 75%;
+    --accent-foreground: 150 15% 8%;
+    --accent-gold: 45 75% 65%;
+
+    --success: 145 55% 55%;
+    --success-foreground: 150 15% 8%;
+
+    --warning: 25 75% 65%;
+    --warning-foreground: 150 15% 8%;
+
+    --destructive: 0 65% 65%;
+    --destructive-foreground: 150 15% 8%;
+
+    --border: 150 8% 20%;
+    --input: 150 8% 18%;
+    --ring: 145 35% 65%;
+
+    /* Dark gradients */
+    --gradient-healing: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--accent-gold)), hsl(var(--accent)));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.2);
+
+    --sidebar-background: 150 15% 10%;
+    --sidebar-foreground: 45 15% 85%;
+    --sidebar-primary: 145 35% 65%;
+    --sidebar-primary-foreground: 150 15% 8%;
+    --sidebar-accent: 150 8% 15%;
+    --sidebar-accent-foreground: 45 15% 85%;
+    --sidebar-border: 150 8% 20%;
+    --sidebar-ring: 145 35% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Enhanced Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hover-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out;
+}
+
+.hover-scale {
+  transition: transform 0.2s ease-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Smooth transitions for all interactive elements */
+.transition-all {
+  transition: all 0.3s ease-out;
+}
+
+/* Pulse animation for progress bars */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
